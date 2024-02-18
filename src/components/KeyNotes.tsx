@@ -250,6 +250,7 @@ const KeyNotes: FC<KeyNotesProps> = memo(
                 // bottom: 0,
                 zIndex: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 gap: 20,
                 padding: 10,
               }}
@@ -286,6 +287,7 @@ const KeyNotes: FC<KeyNotesProps> = memo(
                 top: 0,
                 zIndex: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 gap: 20,
                 padding: 10,
               }}
