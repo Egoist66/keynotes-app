@@ -35,7 +35,7 @@ const App: FC = () => {
 
         },
       ]}
-      // bgColors={["skyblue", "violet", "pink", "cyan"]}
+      bgColors={["skyblue", "grey", "orange", "ghostwhite"]}
     />
   );
 };
