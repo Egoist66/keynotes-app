@@ -1,37 +1,6 @@
 import { FC, ReactNode, memo, useEffect, useMemo, useRef, useState } from "react";
+import { KeyNotesProps, KeyNotesState } from "../../hooks/useKeyNotes";
 
-
-
-type KeyNotesProps = {
-  data?: Array<{
-    title?: string;
-    content?: string;
-    pictures?: string;
-    id: number;
-  }>;
-  textColor?: string;
-  enableControls?: boolean;
-  autoSlide?: { on?: boolean; speed?: number };
-  position?: boolean;
-  fontSize?: string;
-  render?: (data?: {
-    content: string | undefined;
-    title: string | undefined;
-    pics: string | undefined;
-    order: number;
-  }) => ReactNode;
-  defaultBackground?: string;
-  bgColors?: Array<string>;
-};
-
-type KeyNotesState = {
-  order: number;
-  index: number;
-  controlsOut: boolean;
-  position: boolean;
-  autoSlide?: { on?: boolean; speed?: number };
-  isPicFull: boolean;
-};
 
 const KeyNotes: FC<KeyNotesProps> = memo(
   ({

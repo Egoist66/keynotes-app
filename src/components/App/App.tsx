@@ -1,5 +1,5 @@
 import { FC } from "react";
-import KeyNotes from "./KeyNotes";
+import KeyNotes from "../KeyNotes/KeyNotes";
 
 const App: FC = () => {
   return (
