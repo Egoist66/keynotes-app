@@ -1,19 +1,21 @@
-type CSSString = string
+type CSSString = string;
 
-export const MainStyle = (bgColors: string[], index: number, defaultBg: string): CSSString => {
+export const MainStyle = (
+  bgColors: string[] | undefined,
+  index: number,
+  defaultBg: string | undefined
+): CSSString => {
   return `
     body,html {
-        margin: 0;
-        padding: 0;
-        font-size: clamp(16px, 2vw, 18px);
-        background-color: ${
-          bgColors ? bgColors[index] : defaultBg
-        };
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: 100%;
-        box-sizing: border-box;
-        font-family: 'Arial';
+      margin: 0;
+      padding: 0;
+      font-size: clamp(16px, 2vw, 18px);
+      background-color: ${bgColors ? bgColors[index] : defaultBg};
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      box-sizing: border-box;
+      font-family: 'Arial';
     }
 
     body::after {

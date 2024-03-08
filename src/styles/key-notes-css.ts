@@ -3,8 +3,8 @@ import React from "react";
 export type KeyNotesCSSProps = {
     textColor: string,
     fontSize: string
-    bgColors: string[]
-    defaultBg: string
+    bgColors: string[] | undefined
+    defaultBg: string | undefined
     index: number
 }
 
