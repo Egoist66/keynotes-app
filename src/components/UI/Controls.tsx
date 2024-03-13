@@ -3,7 +3,6 @@ import {ControlsPropsType} from "../../types/controls-buttons/controls-buttons.t
 
 
 export const Controls: FC<ControlsPropsType> = memo(({options, style}) => {
-
     return (
         <>
 
