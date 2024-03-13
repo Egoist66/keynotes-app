@@ -1,7 +1,9 @@
+import {KeyNoteData} from "../types/use-key-notes/use-key-notes-types.ts";
+
 type CSSString = string;
 
 export const MainStyle = (
-  bgColors: string[] | undefined,
+  data: KeyNoteData[] | undefined,
   index: number,
   defaultBg: string | undefined
 ): CSSString => {
@@ -10,7 +12,7 @@ export const MainStyle = (
       margin: 0;
       padding: 0;
       font-size: clamp(16px, 2vw, 18px);
-      background-color: ${bgColors ? bgColors[index] : defaultBg};
+      background-color: ${data![index]?.background ? data![index]?.background : defaultBg};
       overflow-x: hidden;
       overflow-y: auto;
       height: 100%;

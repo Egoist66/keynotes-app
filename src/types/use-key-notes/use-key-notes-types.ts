@@ -1,6 +1,8 @@
 
 export type KeyNoteData = {
   title?: string;
+  background?: string;
+  textColor?: string;
   content?: string;
   pictures?: string;
   id: number;

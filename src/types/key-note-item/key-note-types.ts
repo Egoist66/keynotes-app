@@ -5,6 +5,5 @@ export type KeyNoteItemProps = {
     stepIndex: number,
     itemIndex: number
     data: KeyNoteData[],
-    bgColors: string[] | undefined
     title: string | undefined
 }

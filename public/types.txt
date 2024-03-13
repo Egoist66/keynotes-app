@@ -1,0 +1,9 @@
+export type KeyNoteData = {
+  title?: string;
+  background?: string;
+  content?: string;
+  pictures?: string;
+  id: number;
+};
+
+----- Array ---
