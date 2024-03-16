@@ -110,7 +110,7 @@ const KeyNotes: FC<KeyNotesProps> = memo(({
                                     {name: 'Fullscreen', onClickHandler: setFullScreen},
                                     {
                                         name: 'Fullscreen image',
-                                        disabled: data && !data[state.index]?.pictures,
+                                        disabled: (!slides[state.index]?.pictures || !data![state.index]!.pictures),
                                         onClickHandler: setPicFullScreen
                                     },
                                 ]}
@@ -141,6 +141,9 @@ const KeyNotes: FC<KeyNotesProps> = memo(({
                     type="file"
                 />
                 <style>{mainStyle}</style>
+                <div style={{position: "absolute", bottom: 10, right: 15}}>
+                    <a target="_blank" style={{color: 'deepblue'}} title="download and upload into app" download href="/slides.json">Example slides</a>
+                </div>
             </>
         );
     }

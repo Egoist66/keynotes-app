@@ -47,8 +47,8 @@ export const useUploadFile = () => {
 
                         })
                         await Swal.fire({
-                            title: "File Format",
-                            text: "Perhaps structure of file does not fit for the slides",
+                            title: "Error while uploading",
+                            text: "Perhaps structure of the file does not fit for the slides",
                             icon: "error"
                         });
                         return
@@ -86,9 +86,18 @@ export const useUploadFile = () => {
                         message: 'File is not uploaded',
 
                     })
+
+                    await Swal.fire({
+                        title: "Error while uploading",
+                        text: "Wrong file format!",
+                        confirmButtonColor: 'rgb(48, 133, 214)',
+                        icon: "error"
+                    });
+
                 }
 
             }
+            
             reader.onerror = () => {
                 console.log(reader.error);
                 setState({

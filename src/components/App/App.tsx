@@ -1,6 +1,7 @@
 import {FC} from "react";
 import KeyNotes from "../KeyNotes/KeyNotes";
 
+
 const App: FC = () => {
     return (
         <KeyNotes
@@ -11,5 +12,7 @@ const App: FC = () => {
         />
     );
 };
+
+
 
 export default App;
