@@ -48,6 +48,7 @@ export const useUploadFile = () => {
                         })
                         await Swal.fire({
                             title: "Error while uploading",
+                            confirmButtonColor: 'rgb(48, 133, 214)',
                             text: "Perhaps structure of the file does not fit for the slides",
                             icon: "error"
                         });
