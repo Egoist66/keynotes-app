@@ -118,7 +118,7 @@ export const useKeyNotes = (
     }
 
     return () => {};
-  }, [state.order, data?.length]);
+  }, [state.order, data?.length, bgColors]);
 
   useEffect(() => {
     if (state.autoSlide?.on) {
