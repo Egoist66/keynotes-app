@@ -29,7 +29,7 @@ const KeyNotes: FC<KeyNotesProps> = memo(
       destroyAutoPlayByMouseEnter,
       KeyNoteRef,
       state,
-    } = useKeyNotes(data ?? slides, bgColors, autoSlide.on, autoSlide.speed);
+    } = useKeyNotes(slides ?? data, bgColors, autoSlide.on, autoSlide.speed);
 
     const {
       _sidePreviewStyle,
@@ -161,6 +161,7 @@ const KeyNotes: FC<KeyNotesProps> = memo(
             Example slides
           </a>
         </div>
+
       </>
     );
   }
