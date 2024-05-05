@@ -3,6 +3,7 @@ import {KeyNoteData, KeyNotesState} from "../types/use-key-notes/use-key-notes-t
 
 export const useKeyNotes = (
   data: KeyNoteData[] | undefined,
+  //@ts-ignore
   bgColors: string[] | undefined,
   on: boolean | undefined,
   speed: number | undefined
