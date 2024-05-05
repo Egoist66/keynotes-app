@@ -1,5 +1,6 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {KeyNoteData, KeyNotesState} from "../types/use-key-notes/use-key-notes-types.ts";
+import { useLS } from "./useLS.ts";
 
 export const useKeyNotes = (
   data: KeyNoteData[] | undefined,
@@ -16,6 +17,7 @@ export const useKeyNotes = (
     autoSlide: { on, speed },
     isPicFull: false,
   });
+
 
   const KeyNoteRef = useRef<HTMLDivElement>(null);
   let timer = useRef<any>(null);
@@ -41,7 +43,7 @@ export const useKeyNotes = (
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       forward(1)();
     } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-      if (state.index === 0) {
+      if (state.index === 0 || state.order === 1) {
         return;
       }
       back(1)();
@@ -102,7 +104,7 @@ export const useKeyNotes = (
   }, [])
 
   useEffect(() => {
-    if (state.index >= (data?.length || 0)) {
+    if (state.index === (data?.length || 0)) {
       setState({
         ...state,
         order: 1,
@@ -111,7 +113,7 @@ export const useKeyNotes = (
     }
 
     return () => {};
-  }, [state.index, data, bgColors]);
+  }, [state.index, data?.length, bgColors]);
 
   useEffect(() => {
     if (state.autoSlide?.on) {
@@ -130,6 +132,8 @@ export const useKeyNotes = (
       document.documentElement.removeEventListener("keydown", slideByArrows);
     };
   });
+
+  
 
   return {
     destroyAutoPlayByMouseEnter,
