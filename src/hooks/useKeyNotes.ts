@@ -1,6 +1,5 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {KeyNoteData, KeyNotesState} from "../types/use-key-notes/use-key-notes-types.ts";
-import { useLS } from "./useLS.ts";
 
 export const useKeyNotes = (
   data: KeyNoteData[] | undefined,
