@@ -39,12 +39,15 @@ export const useKeyNotes = (
   };
 
   const slideByArrows = (e: KeyboardEvent) => {
+    
+
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       forward(1)();
     } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
       if (state.index === 0 || state.order === 1) {
         return;
       }
+  
       back(1)();
     }
   };
@@ -103,16 +106,18 @@ export const useKeyNotes = (
   }, [])
 
   useEffect(() => {
-    if (state.index === (data?.length || 0)) {
-      setState({
-        ...state,
-        order: 1,
-        index: 0,
-      });
+    if (state.order > data!.length) {
+      setState((prevState) => (
+        {
+          ...prevState,
+          order: 1,
+          index: 0,
+        }
+      ));
     }
 
     return () => {};
-  }, [state.index, data?.length, bgColors]);
+  }, [state.order, data?.length]);
 
   useEffect(() => {
     if (state.autoSlide?.on) {
